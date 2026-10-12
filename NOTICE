@@ -1,0 +1,34 @@
+Agent Vision
+Copyright 2026 Joshua Mills
+
+This project is licensed under the Apache License 2.0 (see LICENSE).
+
+It includes material derived from the SO-ARM100 / SO-101 project by TheRobotStudio,
+https://github.com/TheRobotStudio/SO-ARM100, licensed under the Apache License 2.0.
+
+Modifications to TheRobotStudio material
+----------------------------------------
+models/so101-camera-arm.glb (also embedded as base64 in docs/index.html) contains these
+TheRobotStudio meshes, converted from STL to glTF, decimated to about 12% of their
+triangles with meshoptimizer, merged per URDF link, placed in each link's frame from
+so101_new_calib.urdf, and restyled:
+  - base_so101_v2, base_motor_holder_so101_v1 (node base_link)
+  - motor_holder_so101_base_v1, rotation_pitch_so101_v1 (node shoulder_link)
+  - upper_arm_so101_v1 (node upper_arm_link)
+  - under_arm_so101_v1, motor_holder_so101_wrist_v1 (node lower_arm_link)
+  - wrist_roll_pitch_so101_v2 (node wrist_link)
+  - sts3215_03a_v1, sts3215_03a_no_horn_v1 (nodes servo_1 to servo_5, used as a
+    stand-in for the Hiwonder HX-30HM)
+The gripper parts (moving jaw, fixed jaw / wrist_roll_follower, gripper servo) are not used.
+Joint origins, axes and limits used by docs/index.html come from so101_new_calib.urdf.
+
+Original to this project (not TheRobotStudio's): cad/riser_A_foot.stl,
+cad/riser_B_top.stl, cad/camera_plate.stl, and the riser and camera plate in the glb.
+
+Other third-party material
+--------------------------
+- docs/index.html and docs/buslinker.html use the ISO-GLOW 3D shell (MIT) by April Zhu,
+  https://isoglow.dev, built on iso-figure by Tolga Cohce (MIT),
+  https://github.com/MrBongoC/ai-iso-skill.
+- Explainer conventions from Anatomy, https://github.com/wheresryan22/anatomy.
+- three.js (MIT) is loaded from cdn.jsdelivr.net by the pages' import map.
