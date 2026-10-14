@@ -15,16 +15,17 @@ This is my first public repo, and I'm new to robotics, so the docs are written f
 | `agent_vision/` | Python package: `hx_bus` servo driver plus the `av_*` command line tools. |
 | `tests/` | Unit tests for packet building/parsing, checksums and clamping (no hardware needed). |
 | `examples/` | Placeholder `limits`, `poses` and `av_config` files showing the file format only. |
-| `cad/riser_A_foot.stl` | Bottom riser section (150 mm, print upright as is). Clamps to the bench edge. |
-| `cad/riser_B_top.stl` | Top riser section (150 mm). Modelled upside down for printing; flip it so the spigot points down into the foot. Stacked height is 292 mm. |
-| `cad/camera_plate.stl` | 42 x 42 mm plate that bolts to the wrist-roll servo horn in place of the gripper. Holds a UC-A55 camera board on M2 standoffs (28 x 28 mm pattern). |
-| `cad/arm_adapter_v2.py` | CadQuery source for the SO-101 base to riser adapter (strap clamps, no drilling). Needs a base outline traced from Hiwonder's base part, which is not included. |
-| `cad/buslinker_mount.py` | CadQuery source for the clip-on BusLinker V3 mount for the riser column. |
+| `cad/stl/` | Printable parts: riser v2 (A foot, B top), arm adapter v2 (plate + left/right clamps), BusLinker mount, camera plate v3. See [HARDWARE.md](HARDWARE.md). |
+| `cad/*.py` | CadQuery sources for those parts. `arm_adapter_v2.py` needs a base outline traced from Hiwonder's base part, which is not included. |
+| `HARDWARE.md` | Full bill of materials: electronics, printed parts, every screw, nut, washer and standoff, print settings. |
 | `models/so101-camera-arm.glb` | The assembled arm, riser and camera plate as one 3D model. |
 | `docs/index.html` | "How Agent Vision works", an interactive 3D explainer (also served on GitHub Pages). |
 | `docs/buslinker.html` | How the BusLinker board connects the computer, the 12 V supply and a chain of bus servos. |
 
 ## Parts list
+
+The full list with every fastener by size and count is in **[HARDWARE.md](HARDWARE.md)**. In short:
+
 
 - Hiwonder SO-ARM101 kit (follower arm): 5 HX bus servos used, BusLinker V3.0 board, 12 V supply, bus cables and kit hardware. The gripper servo and jaws are not used.
 - UC-A55 / Arducam USB camera board for the wrist.
@@ -37,7 +38,7 @@ This is my first public repo, and I'm new to robotics, so the docs are written f
 1. Get the Hiwonder SO-ARM101 kit and print its follower-arm parts (skip the gripper jaws).
 2. Give each servo its own ID, one servo on the BusLinker at a time: 1 base, 2 shoulder, 3 elbow, 4 wrist, 5 wrist roll.
 3. Assemble the arm from the base up. Toothed "main" horns clamp onto the splined servo shafts with the center screw; smooth "assistant" horns go on the back pivots.
-4. Print the two riser sections and the camera plate, stack the riser, fit the arm adapter and bolt it into the riser top, then clamp the foot to the bench. Always clamp it; weight alone won't stop a swinging arm from tipping.
+4. Print the parts in `cad/stl/`. Stack riser B on riser A (A's spigot goes into B's socket) and bolt them together. Bolt the adapter plate onto riser B's top, set the arm base on it, and strap it down with the two clamps (no drilling). Then clamp the foot to the bench. Always clamp it; weight alone won't stop a swinging arm from tipping.
 
 ![SO-101 adapter on the riser](docs/so101_adapter_riser_assembly.png)
 
@@ -122,9 +123,9 @@ av_snap                      # grab a frame into frames/
 
 ## Known gaps (please check before you print)
 
-- The riser's base bolt holes were matched against TheRobotStudio's base mesh, not Hiwonder's printed base. The base holes measure about 5.0 x 6.1 mm against the plate's 5.5 mm, so check your bolt size.
-- The camera plate assumes a 6 mm servo horn, which leaves a 1.3 mm gap to the wrist bracket. Check your horn's real thickness or add a spacer.
-- `cad/arm_adapter_v2.py` and `cad/buslinker_mount.py` are sources only; printable STLs aren't in the repo yet.
+- **Arm base clamps.** The v2 adapter uses no base holes; two strap clamps grip the base's side wings. Their fit was designed from the base mesh: about 110.9 mm across the wings and 12.4 mm wing thickness. The clamps only adjust about ±1.75 mm front to back. Measure your base with calipers, and print one clamp first to test it before the large plate.
+- **Camera plate clearance.** Camera plate v3 sits on a 4 mm boss to clear the wrist bracket's tab, which was measured at 1.7 mm above the horn face. Check this on your arm before fitting the camera.
+- **Explainer is out of date.** The 3D explainer (`docs/index.html`, `models/so101-camera-arm.glb`) still shows the first riser and camera plate, not the v2 parts in `cad/stl/`.
 
 ## Credits
 
