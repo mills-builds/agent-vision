@@ -18,6 +18,7 @@ This is my first public repo, and I'm new to robotics, so the docs are written f
 | `cad/stl/` | Printable parts: riser v2 (A foot, B top), arm adapter v2 (plate + left/right clamps), BusLinker mount, camera plate v3 rev c. See [HARDWARE.md](HARDWARE.md). |
 | `cad/*.py` | CadQuery sources for those parts. `arm_adapter_v2.py` needs a base outline traced from Hiwonder's base part, which is not included. |
 | `HARDWARE.md` | Full bill of materials: electronics, printed parts, every screw, nut, washer and standoff, print settings. |
+| `tools/build_explainer_glb.py` | Rebuilds the explainer's 3D model from the CAD exports and re-embeds it in `docs/index.html`. |
 | `models/so101-camera-arm.glb` | The assembled arm, riser and camera plate as one 3D model. |
 | `docs/index.html` | "How Agent Vision works", an interactive 3D explainer (also served on GitHub Pages). |
 | `docs/buslinker.html` | How the BusLinker board connects the computer, the 12 V supply and a chain of bus servos. |
@@ -124,7 +125,6 @@ av_snap                      # grab a frame into frames/
 ## Known gaps (please check before you print)
 
 - **Arm base clamps.** The v2 adapter uses no base holes; two strap clamps grip the base's side wings. Their fit was designed from the base mesh: about 110.9 mm across the wings and 12.4 mm wing thickness. The clamps only adjust about ±1.75 mm front to back. Measure your base with calipers, and print one clamp first to test it before the large plate.
-- **Explainer is out of date.** The 3D explainer (`docs/index.html`, `models/so101-camera-arm.glb`) still shows the first riser and camera plate, not the v2 parts in `cad/stl/`.
 
 ## Credits
 
