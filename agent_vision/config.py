@@ -40,5 +40,11 @@ def load_limits(path):
     data = load_json(path)
     if data is None:
         return None
-    return {int(v["id"]): (int(v["min"]), int(v["max"]))
-            for k, v in data.items() if not k.startswith("_")}
+    limits = {}
+    for name, v in data.items():
+        if name.startswith("_"):
+            continue  # comments / notes
+        if not isinstance(v.get("min"), int) or not isinstance(v.get("max"), int) or v["min"] > v["max"]:
+            raise SystemExit(f"{path}: '{name}' needs integer min <= max. Run av_capture_range to make your own.")
+        limits[int(v["id"])] = (v["min"], v["max"])
+    return limits

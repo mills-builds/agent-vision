@@ -1,0 +1,5 @@
+{
+  "_note": "Copy to av_config.json in the folder you run av_* from. --port / AV_PORT override this.",
+  "port": "/dev/cu.usbmodemXXXX",
+  "baud": 1000000
+}

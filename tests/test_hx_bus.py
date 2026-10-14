@@ -91,5 +91,16 @@ class ClampTests(unittest.TestCase):
                 os.environ["AV_PORT"] = old
 
 
+class LimitsFileTests(unittest.TestCase):
+    def test_example_placeholders_are_refused(self):
+        from agent_vision import config
+        with self.assertRaises(SystemExit):
+            config.load_limits("examples/limits.example.json")
+
+    def test_missing_limits_is_none(self):
+        from agent_vision import config
+        self.assertIsNone(config.load_limits("does_not_exist.json"))
+
+
 if __name__ == "__main__":
     unittest.main()
