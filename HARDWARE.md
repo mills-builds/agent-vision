@@ -14,7 +14,7 @@ Anything marked **verify** hasn't been confirmed on a real build. Check it befor
 | 1 set | Servo bus cables (kit) | Daisy chain: BusLinker, then servos 1 to 5. Kit cables are 200 mm max; a longer lead to the base may be needed (**verify**). |
 | 1 | USB hub | Connects the BusLinker and the camera to the computer. Model and whether it's powered: **verify**. |
 | 1 | Arducam UC-A55 USB camera board | 95° H x 76° V FOV (vendor spec). The v3 plate fits a 38 x 38 board with holes on 28 x 28 (photo-measured, **verify** with calipers). |
-| 1 | 4-pin (JST) camera-to-USB cable | **May need buying separately.** Long enough to run from the wrist to the hub with slack at every joint (length **verify**). |
+| 1 | 4-pin 1.25 mm pitch (Molex PicoBlade) to USB cable for the camera | **May need buying separately.** Long enough to run from the wrist to the hub with slack at every joint (length **verify**). |
 | 1 | USB cable, BusLinker to hub | |
 
 ## Printed parts (`cad/stl/`)
@@ -40,11 +40,14 @@ All parts are designed to print without supports. The SO-101 arm parts themselve
 ## Fasteners by part
 
 ### Riser A to riser B joint
+Tab and socket: riser A's 60 x 40 mm spigot drops into riser B's socket, then 4 bolts pull the flanges together.
+M5 bolts, nuts and washers come from any hardware store.
+
 | Qty | Part | Notes |
 |---|---|---|
-| 4 | M5 hex bolt, about M5 x 30 | Down through B's 8 mm flange into captive nuts in A. A needs at least about 24 mm of thread engagement, and the hole runs 12 mm deeper for the tail, so 25 to 35 mm works. Length **verify**. |
+| 4 | M5 x 30 hex bolt | Down through B's 8 mm flange into captive nuts in A. In the CAD the nut sits 11 mm below A's joint face and the hole runs 12 mm deeper, so anything from 25 to 35 mm fits; 30 mm is the middle. |
 | 4 | M5 hex nut | Slide into the side-slot nut traps in A. |
-| 4 | M5 washer | Under the bolt heads (**verify**). |
+| 4 | M5 flat washer | Under the bolt heads. Recommended; the CAD doesn't model one. |
 
 ### Arm adapter plate to riser B (`arm_adapter_v2.py`)
 | Qty | Part | Notes |
@@ -63,7 +66,7 @@ No holes are drilled in the arm base. Two printed strap clamps grip the base's s
 | 4 | M5 hex nut | Pressed into hex pockets (8.1 mm across flats) under the plate. |
 | 4 | M5 x 15 mm fender washer | Under each clamp bolt head. |
 
-The M5 hardware is bench stock from Lowe's (exact product **verify**).
+All M5 bolts, nuts and washers (fender washers included) are standard parts from any hardware store.
 
 ### BusLinker mount (`buslinker_mount.py`)
 | Qty | Part | Notes |
