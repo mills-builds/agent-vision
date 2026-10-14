@@ -1,5 +1,7 @@
 # Agent Vision
 
+<p align="center"><img src="docs/images/agent-vision-hero.jpg" alt="Agent Vision arm on its printed riser" width="420"></p>
+
 An AI-controlled camera arm built on the open SO-101.
 
 Agent Vision is a five-servo SO-101 arm with the gripper swapped for a small camera plate, mounted on a printed riser at the back of a workbench. An AI assistant drives it from a computer over USB, so it can move the camera above a spot on the bench and then aim it precisely.
