@@ -33,13 +33,9 @@ All parts are designed to print without supports. The SO-101 arm parts themselve
 
 ### Known print settings
 
-From the slicer file for the adapter plate and both clamps:
-
-- Bambu Lab X1 Carbon, 0.4 mm nozzle, Bambu PLA Matte
-- 0.2 mm layers, 4 walls, 5 top / 3 bottom layers, 15% grid infill
-- Nozzle 220 °C, bed 55 °C, textured PEI plate, no supports, no brim
-
-The riser was printed separately (on a second printer); its exact settings are **verify**. The design notes plan for PLA with 4 walls and 20 to 25% infill.
+- **Filament:** white PLA for every part (confirmed).
+- **Adapter plate and both clamps** (from their slicer file): Bambu Lab X1 Carbon, 0.4 mm nozzle, 0.2 mm layers, 4 walls, 5 top / 3 bottom layers, 15% grid infill, nozzle 220 °C, bed 55 °C, textured PEI plate, no supports, no brim.
+- **Riser, BusLinker mount and camera plate:** slicer settings not recorded (**verify**). The design notes plan for 4 walls and 20 to 25% infill.
 
 ## Fasteners by part
 
