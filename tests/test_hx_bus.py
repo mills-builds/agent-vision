@@ -75,6 +75,11 @@ class ClampTests(unittest.TestCase):
                 self.assertTrue(limits[s][0] <= wp[s] <= limits[s][1])
             prev = wp
 
+    def test_step_ms_for(self):
+        from agent_vision.cli import step_ms_for
+        self.assertEqual(step_ms_for(1.5, 30), 50)
+        self.assertEqual(step_ms_for(0.1, 50), 20)
+
     def test_resolve_port_priority(self):
         import os
         old = os.environ.pop("AV_PORT", None)
