@@ -1,0 +1,9 @@
+{
+  "_note": "EXAMPLE STRUCTURE ONLY. Do not copy these numbers: every arm, riser and space differs. Generate your own limits.json with av_capture_range.",
+  "_todo": "TODO(mills-builds): add one real setup's values here as a labeled reference, after mills-builds approves.",
+  "base":     {"id": 1, "min": null, "max": null},
+  "shoulder": {"id": 2, "min": null, "max": null},
+  "elbow":    {"id": 3, "min": null, "max": null},
+  "wrist":    {"id": 4, "min": null, "max": null},
+  "roll":     {"id": 5, "min": null, "max": null}
+}

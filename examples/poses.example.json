@@ -1,0 +1,5 @@
+{
+  "_note": "EXAMPLE STRUCTURE ONLY. Do not copy these numbers: teach your own poses with av_teach NAME. Values are servo positions 0-1000.",
+  "_todo": "TODO(mills-builds): add one real setup's poses here as a labeled reference, after mills-builds approves.",
+  "overhead": {"base": null, "shoulder": null, "elbow": null, "wrist": null, "roll": null}
+}

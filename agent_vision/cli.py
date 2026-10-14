@@ -126,6 +126,8 @@ def goto_main(argv=None):
         raise SystemExit(f"No pose '{args.name}' in {args.poses}. Known: {', '.join(poses) or 'none'}")
     by_name = {n: s for s, n in JOINTS.items()}
     target = {by_name[k]: v for k, v in poses[args.name].items() if k in by_name}
+    if not target or not all(isinstance(v, int) for v in target.values()):
+        raise SystemExit(f"Pose '{args.name}' needs integer positions; teach it with av_teach.")
     unlimited = [JOINTS[s] for s in target if s not in limits]
     if unlimited:
         raise SystemExit(f"No limits for {unlimited} in {args.limits}; refusing to move.")
