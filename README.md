@@ -15,7 +15,7 @@ This is my first public repo, and I'm new to robotics, so the docs are written f
 | `agent_vision/` | Python package: `hx_bus` servo driver plus the `av_*` command line tools. |
 | `tests/` | Unit tests for packet building/parsing, checksums and clamping (no hardware needed). |
 | `examples/` | Placeholder `limits`, `poses` and `av_config` files showing the file format only. |
-| `cad/stl/` | Printable parts: riser v2 (A foot, B top), arm adapter v2 (plate + left/right clamps), BusLinker mount, camera plate v3. See [HARDWARE.md](HARDWARE.md). |
+| `cad/stl/` | Printable parts: riser v2 (A foot, B top), arm adapter v2 (plate + left/right clamps), BusLinker mount, camera plate v3 rev c. See [HARDWARE.md](HARDWARE.md). |
 | `cad/*.py` | CadQuery sources for those parts. `arm_adapter_v2.py` needs a base outline traced from Hiwonder's base part, which is not included. |
 | `HARDWARE.md` | Full bill of materials: electronics, printed parts, every screw, nut, washer and standoff, print settings. |
 | `models/so101-camera-arm.glb` | The assembled arm, riser and camera plate as one 3D model. |
@@ -46,7 +46,7 @@ The full list with every fastener by size and count is in **[HARDWARE.md](HARDWA
 
 ![BusLinker mount on the riser](docs/buslinker_mount_assembly.png)
 
-6. Fit the camera plate to the wrist-roll horn and the camera board to the plate.
+6. Fit the camera plate (v3 rev c) to the wrist-roll horn with the 4 kit M3x6 screws, then screw the camera board onto its 4 printed corner posts. The plate's 4 mm boss lifts it clear of the wrist bracket's small tab.
 
 ## Wiring
 
@@ -124,7 +124,6 @@ av_snap                      # grab a frame into frames/
 ## Known gaps (please check before you print)
 
 - **Arm base clamps.** The v2 adapter uses no base holes; two strap clamps grip the base's side wings. Their fit was designed from the base mesh: about 110.9 mm across the wings and 12.4 mm wing thickness. The clamps only adjust about ±1.75 mm front to back. Measure your base with calipers, and print one clamp first to test it before the large plate.
-- **Camera plate clearance.** Camera plate v3 sits on a 4 mm boss to clear the wrist bracket's tab, which was measured at 1.7 mm above the horn face. Check this on your arm before fitting the camera.
 - **Explainer is out of date.** The 3D explainer (`docs/index.html`, `models/so101-camera-arm.glb`) still shows the first riser and camera plate, not the v2 parts in `cad/stl/`.
 
 ## Credits

@@ -13,7 +13,7 @@ Anything marked **verify** hasn't been confirmed on a real build. Check it befor
 | 1 | 12 V 5 A power supply (kit) | Check that the plug fits the BusLinker jack (**verify**: 5.5 x 2.5 vs 4.0 x 1.7). |
 | 1 set | Servo bus cables (kit) | Daisy chain: BusLinker, then servos 1 to 5. Kit cables are 200 mm max; a longer lead to the base may be needed (**verify**). |
 | 1 | USB hub | Connects the BusLinker and the camera to the computer. Model and whether it's powered: **verify**. |
-| 1 | Arducam UC-A55 USB camera board | 95° H x 76° V FOV (vendor spec). The v3 plate fits a 38 x 38 board with holes on 28 x 28 (photo-measured, **verify** with calipers). |
+| 1 | Arducam UC-A55 USB camera board | 95° H x 76° V FOV (vendor spec). Mounts on the camera plate's 4 corner posts (28 x 28 mm pattern). |
 | 1 | 4-pin 1.25 mm pitch (Molex PicoBlade) to USB cable for the camera | **May need buying separately.** Long enough to run from the wrist to the hub with slack at every joint (length **verify**). |
 | 1 | USB cable, BusLinker to hub | |
 
@@ -27,7 +27,7 @@ Anything marked **verify** hasn't been confirmed on a real build. Check it befor
 | 1 | `arm_adapter_clamp_v2_left_print-facedown.stl` | As exported: top face down. |
 | 1 | `arm_adapter_clamp_v2_right_print-facedown.stl` | As exported: top face down. |
 | 1 | `buslinker_mount.stl` | As exported (plate face on the bed). |
-| 1 | `camera_plate_v3.stl` | As exported: horn boss on the bed, camera side up. |
+| 1 | `camera_plate_v3.stl` | Camera plate v3 rev c (the printed version): tapered body on a 4 mm horn boss, 4 corner posts for the camera board. As exported: horn boss on the bed, camera side up. |
 
 All parts are designed to print without supports. The SO-101 arm parts themselves come from Hiwonder's print files (`White LeRobot.3mf` / `Black LeRobot.3mf`), which aren't redistributed here.
 
@@ -35,7 +35,7 @@ All parts are designed to print without supports. The SO-101 arm parts themselve
 
 - **Filament:** white PLA for every part (confirmed).
 - **Adapter plate and both clamps** (from their slicer file): Bambu Lab X1 Carbon, 0.4 mm nozzle, 0.2 mm layers, 4 walls, 5 top / 3 bottom layers, 15% grid infill, nozzle 220 °C, bed 55 °C, textured PEI plate, no supports, no brim.
-- **Riser, BusLinker mount and camera plate:** slicer settings not recorded (**verify**). The design notes plan for 4 walls and 20 to 25% infill.
+- **Riser and BusLinker mount:** slicer settings not recorded (**verify**). Camera plate: white PLA, no supports. The design notes plan for 4 walls and 20 to 25% infill.
 
 ## Fasteners by part
 
@@ -78,7 +78,7 @@ All M5 bolts, nuts and washers (fender washers included) are standard parts from
 
 Kit screw lengths are **verify**.
 
-### Camera plate (`camera_plate_v3.py`)
+### Camera plate v3 rev c (`camera_plate_v3.py`)
 | Qty | Part | Notes |
 |---|---|---|
 | 4 | M3 x 6 pan head (kit) | Through counterbores into the wrist-roll horn. Fit these before the camera. |
