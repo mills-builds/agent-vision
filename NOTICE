@@ -22,8 +22,8 @@ so101_new_calib.urdf, and restyled:
 The gripper parts (moving jaw, fixed jaw / wrist_roll_follower, gripper servo) are not used.
 Joint origins, axes and limits used by docs/index.html come from so101_new_calib.urdf.
 
-Original to this project (not TheRobotStudio's): cad/riser_A_foot.stl,
-cad/riser_B_top.stl, cad/camera_plate.stl, and the riser and camera plate in the glb.
+Original to this project (not TheRobotStudio's): everything under cad/ (riser, arm adapter, BusLinker mount and camera plate
+sources and STLs), and the riser and camera plate in the glb.
 
 Other third-party material
 --------------------------
