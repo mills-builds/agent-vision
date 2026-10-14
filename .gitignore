@@ -1,0 +1,17 @@
+# Camera frames stay out of the repo (av_snap / av_teach write them locally).
+*.jpg
+*.jpeg
+# ...except deliberate documentation images:
+!docs/**/*.jpg
+!docs/**/*.jpeg
+
+# Your own calibration files: every space differs, keep them local.
+/limits.json
+/poses.json
+/frames/
+
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.pytest_cache/
