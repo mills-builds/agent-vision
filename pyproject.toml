@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-vision"
+version = "0.1.0"
+description = "Tools for an AI-controlled SO-101 camera arm on Hiwonder HX bus servos"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.8"
+dependencies = ["pyserial>=3.5"]
+
+[project.scripts]
+av_read = "agent_vision.cli:read_main"
+av_capture_range = "agent_vision.cli:capture_range_main"
+av_teach = "agent_vision.cli:teach_main"
+av_goto = "agent_vision.cli:goto_main"
+av_relax = "agent_vision.cli:relax_main"
+av_snap = "agent_vision.cli:snap_main"
+
+[tool.setuptools]
+packages = ["agent_vision"]
