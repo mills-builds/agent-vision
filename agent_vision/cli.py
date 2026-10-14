@@ -109,6 +109,11 @@ def plan_goto(start, target, limits, max_step=20):
     return clamped, list(hx_bus.interpolate(start, clamped, steps))
 
 
+def step_ms_for(seconds, steps, floor_ms=20):
+    """Time per step so the whole move takes about `seconds` (never under floor_ms per step)."""
+    return max(floor_ms, round(seconds * 1000 / max(1, steps)))
+
+
 def goto_main(argv=None):
     """av_goto NAME: move slowly to a saved pose, clamped to limits.json."""
     ap = config.parser(goto_main.__doc__)
@@ -116,6 +121,7 @@ def goto_main(argv=None):
     ap.add_argument("--max-temp", type=int, default=55, help="abort above this servo temperature in C (default 55)")
     ap.add_argument("--step", type=int, default=20, help="max position units per step (default 20)")
     ap.add_argument("--step-ms", type=int, default=100, help="time per step in ms (default 100)")
+    ap.add_argument("--seconds", type=float, help="total move time; overrides --step-ms (min 20 ms per step)")
     args = ap.parse_args(argv)
 
     limits = config.load_limits(args.limits)
@@ -140,7 +146,9 @@ def goto_main(argv=None):
         for s in target:
             if clamped[s] != target[s]:
                 print(f"note: {JOINTS[s]} clamped {target[s]} -> {clamped[s]}")
-        print(f"Moving to '{args.name}' in {len(waypoints)} steps...")
+        if args.seconds:
+            args.step_ms = step_ms_for(args.seconds, len(waypoints))
+        print(f"Moving to '{args.name}' in {len(waypoints)} steps of {args.step_ms} ms...")
         for i, wp in enumerate(waypoints):
             for s, p in wp.items():
                 bus.move(s, p, args.step_ms)
